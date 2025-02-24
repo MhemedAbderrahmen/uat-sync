@@ -1,3 +1,26 @@
 {
-    "editor.formatOnSave": true
+    "editor.fontFamily": "Agave Nerd Font",
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+    "editor.fontLigatures": true,
+    "editor.formatOnPaste": false, // required
+    "editor.formatOnType": false, // required
+    "editor.fontSize": 14, // optional
+    "explorer.confirmDragAndDrop": true,
+    "editor.mouseWheelZoom": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file", // required to format on save
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit",
+        "source.organizeImports": "explicit",
+        "source.sortImports": "explicit"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }

@@ -1,9 +1,11 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ProjectsModule } from './projects/projects.module';
-import { TypeOrmModule } from '@nestjs/typeorm';
+import { AuthModule } from './auth/auth.module';
 import { Project } from './projects/entities/project.entity';
+import { ProjectsModule } from './projects/projects.module';
+import { UsersModule } from './users/users.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -17,6 +19,8 @@ import { Project } from './projects/entities/project.entity';
       synchronize: true,
     }),
     ProjectsModule,
+    AuthModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],

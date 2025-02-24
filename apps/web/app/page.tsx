@@ -1,25 +1,12 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "@workspace/ui/components/button";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-
-const formSchema = z.object({});
+import SignIn from "@/components/forms/sign-in";
+import Link from "next/link";
 export default function Page() {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      username: "",
-    },
-  });
-
   return (
     <div className="flex items-center justify-center min-h-svh">
-      <div className="flex flex-col items-center justify-center gap-4">
-        <h1 className="text-2xl font-bold">Hello World</h1>
-        <Form {...form}>
-          <Input />
-        </Form>
-        <Button size="sm">Button</Button>
+      <div className="flex flex-col items-center justify-center gap-2 xs:w-full lg:w-1/3 xl:w-1/4">
+        <h1 className="text-2xl font-bold">Syncora</h1>
+        <SignIn />
+        If you don&apos;t have an account<Link href={"/sign-up"}>Sign Up</Link>
       </div>
     </div>
   );

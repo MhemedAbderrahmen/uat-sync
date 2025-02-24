@@ -1,9 +1,9 @@
 import { IsNotEmpty } from 'class-validator';
 
-export class CreateProjectDto {
+export class LoginDto {
   @IsNotEmpty()
-  name: string;
+  username: string;
 
   @IsNotEmpty()
-  description: string;
+  password: string;
 }
