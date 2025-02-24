@@ -1,12 +1,12 @@
-import { Column, PrimaryGeneratedColumn } from "typeorm";
+import { Column, PrimaryGeneratedColumn } from 'typeorm';
 
 export class Project {
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    name:string;
+  @Column()
+  name: string;
 
-    @Column()
-    description: string;
+  @Column()
+  description: string;
 }
