@@ -10,14 +10,15 @@ import { Project } from './projects/entities/project.entity';
       type: 'postgres',
       host: 'localhost',
       port: 5432,
-      username: 'uat_user',
-      password: 'uat_password',
+      username: 'postgres',
+      password: '271996',
       database: 'uat-db',
       entities: [Project],
       synchronize: true,
     }),
-    ProjectsModule],
+    ProjectsModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule { }
+export class AppModule {}

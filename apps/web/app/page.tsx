@@ -1,7 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@workspace/ui/components/button";
-import { Form } from "@workspace/ui/components/form";
-import { Input } from "@workspace/ui/components/input";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
