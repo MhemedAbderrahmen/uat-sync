@@ -2,17 +2,27 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@workspace/ui/components/button";
-import { Form, FormField, FormItem } from "@workspace/ui/components/form";
+import {
+  Form,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "@workspace/ui/components/form";
 import { Input } from "@workspace/ui/components/input";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-const formSchema = z.object({});
+const formSchema = z.object({
+  username: z.string().min(1, "Username is required"),
+  password: z.string().min(8, "Password must be at least 8 characters"),
+});
+
 export default function SignIn() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       username: "",
+      password: "",
     },
   });
 
@@ -21,6 +31,7 @@ export default function SignIn() {
     // ✅ This will be type-safe and validated.
     console.log(values);
   }
+
   return (
     <Form {...form}>
       <form
@@ -33,10 +44,23 @@ export default function SignIn() {
           render={({ field }) => (
             <FormItem>
               <Input placeholder="John Doe" {...field} />
+              <FormMessage />
             </FormItem>
           )}
         />
-        <Button>Sign In</Button>
+
+        <FormField
+          {...form.control}
+          name="password"
+          render={({ field }) => (
+            <FormItem>
+              <Input placeholder="Your password" type="password" {...field} />
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <Button type="submit">Sign In</Button>
       </form>
     </Form>
   );

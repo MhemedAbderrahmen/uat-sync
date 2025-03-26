@@ -6,7 +6,10 @@ export default function Page() {
       <div className="flex flex-col items-center justify-center gap-2 xs:w-full lg:w-1/3 xl:w-1/4">
         <h1 className="text-2xl font-bold">Syncora</h1>
         <SignIn />
-        If you don&apos;t have an account<Link href={"/sign-up"}>Sign Up</Link>
+        <div className="flex w-full flex-row items-center justify-center space-x-2">
+          <div>If you don&apos;t have an account</div>
+          <Link href={"/sign-up"}>Sign Up</Link>
+        </div>
       </div>
     </div>
   );
